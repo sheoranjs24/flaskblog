@@ -1,0 +1,16 @@
+# Globs
+syntax: glob
+
+*.pyc
+
+# Regular Expression
+syntax: regexp
+
+# Directories
+venv
+tmp
+
+# Project Files
+.project
+.pydevproject
+app.db
