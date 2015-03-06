@@ -13,6 +13,7 @@ tmp
 # Project Files
 .project
 .pydevproject
+.DS_Store
 
 # Development Database Files
 app.db
