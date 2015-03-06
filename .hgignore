@@ -13,4 +13,7 @@ tmp
 # Project Files
 .project
 .pydevproject
+
+# Development Database Files
 app.db
+test.db
