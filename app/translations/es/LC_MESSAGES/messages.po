@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-03-06 14:14-0800\n"
-"PO-Revision-Date: 2015-03-06 14:14-0800\n"
+"POT-Creation-Date: 2015-03-06 14:40-0800\n"
+"PO-Revision-Date: 2015-03-06 14:41-0800\n"
 "Last-Translator: \n"
 "Language-Team: es <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -43,55 +43,55 @@ msgstr "Error: servicio de traducción no está configurado."
 msgid "Error: Unexpected error."
 msgstr "Error: Error inesperado."
 
-#: app/views.py:59
+#: app/views.py:62
 msgid "Your post is now live!"
 msgstr "Tu entrada está ahora en vivo!"
 
-#: app/views.py:63 app/templates/base.html:33
+#: app/views.py:66 app/templates/base.html:52
 msgid "Home"
 msgstr "Inicio"
 
-#: app/views.py:78
+#: app/views.py:81
 msgid "Sign In"
 msgstr "Iniciar sesión"
 
-#: app/views.py:86
+#: app/views.py:89
 msgid "Invalid login. Please try again."
 msgstr "Código no válido. Vuelva a intentarlo."
 
-#: app/views.py:121 app/views.py:151 app/views.py:172
+#: app/views.py:124 app/views.py:154 app/views.py:175
 #, python-format
 msgid "User %(nickname)s not found."
 msgstr "Usuario %(nickname)s no encontrado."
 
-#: app/views.py:138
+#: app/views.py:141
 msgid "Your changes have been saved."
 msgstr "Se han guardado los cambios."
 
-#: app/views.py:154
+#: app/views.py:157
 msgid "You can't follow yourself!"
 msgstr "No puedes seguirte a ti mismo!"
 
-#: app/views.py:158
+#: app/views.py:161
 #, python-format
 msgid "Cannot follow %(nickname)s."
 msgstr "No se puede seguir %(nickname)s."
 
-#: app/views.py:162
+#: app/views.py:165
 #, python-format
 msgid "You are now following %(nickname)s!"
 msgstr "Ahora sigues %(nickname)s!"
 
-#: app/views.py:175
+#: app/views.py:178
 msgid "You can't unfollow yourself!"
 msgstr "No se puede dejar de seguir a ti mismo!"
 
-#: app/views.py:179
+#: app/views.py:182
 #, python-format
 msgid "Cannot unfollow %(nickname)s."
 msgstr "No puedes dejar de seguir %(nickname)s."
 
-#: app/views.py:183
+#: app/views.py:186
 #, python-format
 msgid "You have stopped following %(nickname)s"
 msgstr "Ha dejado tras %(nickname)s"
@@ -112,15 +112,19 @@ msgstr "Ocurrió un error inesperado"
 msgid "The administrator has been notified. Sorry for the inconvenience!"
 msgstr "El administrador ha sido notificado. Disculpen las molestias!"
 
-#: app/templates/base.html:35
+#: app/templates/base.html:34
+msgid "Error: Could not contact server."
+msgstr "Error: No se pudo contactar con el servidor."
+
+#: app/templates/base.html:54
 msgid "Your Profile"
 msgstr "Su perfil"
 
-#: app/templates/base.html:36
+#: app/templates/base.html:55
 msgid "Logout"
 msgstr "Cerrar Sesión"
 
-#: app/templates/base.html:43
+#: app/templates/base.html:62
 msgid "Search"
 msgstr "Buscar"
 
@@ -158,9 +162,13 @@ msgstr "Gasto <code>microblog</code> administrativo"
 msgid "%(nickname)s said %(when)s:"
 msgstr "%(nickname)s dijeron %(when)s:"
 
-#: app/templates/post.html:10
+#: app/templates/post.html:13
 msgid "Translate"
 msgstr "Traducir"
+
+#: app/templates/post.html:20
+msgid "Delete"
+msgstr "Delete"
 
 #: app/templates/search_results.html:4
 #, python-format

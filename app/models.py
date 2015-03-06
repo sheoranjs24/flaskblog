@@ -87,7 +87,7 @@ class User(db.Model):
                 followers.c.follower_id == self.id).order_by(
                     Post.timestamp.desc())
 
-    def __repr__(self):
+    def __repr__(self):  # pragma: no cover
         return '<User %r>' % (self.nickname)
 
 
@@ -100,7 +100,7 @@ class Post(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     language = db.Column(db.String(5))
 
-    def __repr__(self):
+    def __repr__(self):  # pragma: no cover
         return '<Post %r>' % (self.body)
 
 
