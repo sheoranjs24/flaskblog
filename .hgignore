@@ -14,6 +14,7 @@ tmp
 # Project Files
 .project
 .pydevproject
+.settings
 .DS_Store
 
 # Development Database Files

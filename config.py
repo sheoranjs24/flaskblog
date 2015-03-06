@@ -36,3 +36,7 @@ LANGUAGES = {
     'en': 'English',
     'es': 'Español'
 }
+
+# microsoft translation service
+MS_TRANSLATOR_CLIENT_ID = 'flaskblog' 
+MS_TRANSLATOR_CLIENT_SECRET = 'lCO8rgwwhAybFOCXLw7XI38f3RYDFs8lzzBuU0rU6uU='
