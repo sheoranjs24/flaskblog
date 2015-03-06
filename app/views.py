@@ -5,6 +5,18 @@ from app import app, db, lm, oid
 from .forms import LoginForm, EditForm
 from .models import User
 
+@lm.user_loader
+def load_user(id):
+    return User.query.get(int(id))
+
+@app.before_request
+def before_request():
+    g.user = current_user
+    if g.user.is_authenticated():
+        g.user.last_seen = datetime.utcnow()
+        db.session.add(g.user)
+        db.session.commit()
+        
 @app.route('/')
 @app.route('/index')
 @login_required
@@ -38,23 +50,6 @@ def login():
                            title='Sign In',
                            form=form,
                            providers=app.config['OPENID_PROVIDERS'])
-
-@app.route('/logout')
-def logout():
-    logout_user()
-    return redirect(url_for('index'))
-
-@lm.user_loader
-def load_user(id):
-    return User.query.get(int(id))
-
-@app.before_request
-def before_request():
-    g.user = current_user
-    if g.user.is_authenticated():
-        g.user.last_seen = datetime.utcnow()
-        db.session.add(g.user)
-        db.session.commit()
     
 @oid.after_login
 def after_login(resp):
@@ -75,6 +70,11 @@ def after_login(resp):
         session.pop('remember_me', None)
     login_user(user, remember = remember_me)
     return redirect(request.args.get('next') or url_for('index'))
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
 
 @app.route('/user/<nickname>')
 @login_required
