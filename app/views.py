@@ -1,6 +1,7 @@
 from flask import render_template, flash, redirect, session, url_for, request, g, jsonify
 from flask.ext.login import login_user, logout_user, current_user, login_required
 from flask.ext.babel import gettext
+from flask.ext.sqlalchemy import get_debug_queries
 from guess_language import guessLanguage
 from datetime import datetime
 
@@ -9,7 +10,7 @@ from forms import LoginForm, EditForm, PostForm, SearchForm
 from models import User, Post
 from emails import follower_notification
 from translate import microsoft_translate
-from config import POSTS_PER_PAGE, MAX_SEARCH_RESULTS, LANGUAGES
+from config import POSTS_PER_PAGE, MAX_SEARCH_RESULTS, LANGUAGES, DATABASE_QUERY_TIMEOUT
 
 @lm.user_loader
 def load_user(id):
@@ -20,6 +21,13 @@ def load_user(id):
 def get_locale():
     return request.accept_languages.best_match(LANGUAGES.keys())
 
+
+@app.after_request
+def after_request(response):
+    for query in get_debug_queries():
+        if query.duration >= DATABASE_QUERY_TIMEOUT:
+            app.logger.warning("SLOW QUERY: %s\nParameters: %s\nDuration: %fs\nContext: %s\n" % (query.statement, query.parameters, query.duration, query.context))
+    return response
 
 @app.before_request
 def before_request():
