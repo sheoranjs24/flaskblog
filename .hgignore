@@ -2,7 +2,7 @@
 syntax: glob
 
 *.pyc
-*.mo
+#*.mo
 
 # Regular Expression
 syntax: regexp
