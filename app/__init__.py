@@ -63,7 +63,7 @@ if os.environ.get('HEROKU') is not None:
     import logging
     stream_handler = logging.StreamHandler()
     app.logger.addHandler(stream_handler)
-    app.logger.setLevel(loggign.INFO)
+    app.logger.setLevel(logging.INFO)
     app.logger.info('flaskblog startup')
 
 from app import views, models
