@@ -9,7 +9,7 @@ if sys.version_info >= (3, 0):
     enable_search = False
 else:
     enable_search = WHOOSH_ENABLED
-    if enabled_search:
+    if enable_search:
         import flask.ext.whooshalchemy as whooshalchemy
 
 
