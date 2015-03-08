@@ -22,15 +22,15 @@ SQLALCHEMY_RECORD_QUERIES = True
 DATABASE_QUERY_TIMEOUT = 0.5
 
 # email server
-MAIL_SERVER = 'your.mailserver.com'
-MAIL_PORT = 25
+MAIL_SERVER = 'smtp.googlemail.com'
+MAIL_PORT = 465
 MAIL_USE_TLS = False
-MAIL_USE_SSL = False
+MAIL_USE_SSL = True
 MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
 MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
 
 # administrator list
-ADMINS = ['you@example.com']
+ADMINS = ['sheoranjs24@gmail.com']
 
 # pagination
 POSTS_PER_PAGE = 3
